@@ -21,10 +21,8 @@ LOAD DATA LOCAL INPATH 'data.tsv' OVERWRITE INTO TABLE data2;
 
 INSERT OVERWRITE DIRECTORY 'output'
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
-SELECT letter,
-        date_event,
-        value
+SELECT letter, date_event, value
 FROM data2
-ORDER BY letter, value ASC;
+ORDER BY letra, value;
 
 
