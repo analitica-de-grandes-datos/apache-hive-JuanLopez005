@@ -23,6 +23,6 @@ INSERT OVERWRITE DIRECTORY 'output'
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
 SELECT letter, date_event, value
 FROM data2
-ORDER BY letra, value, date_event;
+ORDER BY letter, value, date_event;
 
 
