@@ -1,17 +1,3 @@
-/*
-
-Pregunta
-===========================================================================
-
-Escriba una consulta que retorne para cada valor único de la columna `t0.c2`, 
-los valores correspondientes de la columna `t0.c1`. 
-
-Apache Hive se ejecutará en modo local (sin HDFS).
-
-Escriba el resultado a la carpeta `output` de directorio de trabajo.
-
-*/
-
 DROP TABLE IF EXISTS tbl0;
 CREATE TABLE tbl0 (
     c1 INT,
@@ -42,9 +28,7 @@ MAP KEYS TERMINATED BY '#'
 LINES TERMINATED BY '\n';
 LOAD DATA LOCAL INPATH 'data1.csv' INTO TABLE tbl1;
 
-/*
-    >>> Escriba su respuesta a partir de este punto <<<
-*/
+
 DROP TABLE IF EXISTS val_uni;
 CREATE TABLE val_uni AS SELECT c2, 
 concat_ws(':',collect_list(cast(c1 as string))) as numbers
